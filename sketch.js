@@ -57,7 +57,6 @@ function setup() {
   //top
   blocks9 = new Block(700,95,30,40);
 
-  //ball holder with slings
   ball = Bodies.circle(50,200,20);
   World.add(world,ball);
 
@@ -67,8 +66,6 @@ function setup() {
 function draw() {
   background(56,44,44); 
  
-  //Engine.update(engine);
-  //text(mouseX + ',' + mouseY, 10, 15);
   textSize(20);
   fill("lightyellow");
   text("Drag the Hexagonal Stone and Release it, to launch it towards the blocks",100,30);
@@ -111,14 +108,10 @@ function draw() {
   fill("pink")
   blocks9.display();
   fill("gold");
-  imageMode(CENTER)
-  image(polygon_img ,ball.position.x,ball.position.y,40,40);
+//create polygon and set image
 
   slingShot.display();
 }
-function mouseDragged(){
-  Matter.Body.setPosition(this.ball,{x:mouseX,y:mouseY});
-}
-function mouseReleased(){
-  slingShot.fly();
-}
+
+
+//set mouse released and dragged for the slingshot
